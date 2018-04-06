@@ -1,19 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
-<suite name="Test Suite: CIL Test Suite" parallel="none">
+<suite name="Test Suite: Bank Loan Automation Test Suite" parallel="none">
 
-	<test name="CIL Test Cases">
+	<test name="Bank Loan Tests">
 		<parameter name="browser" value="Chrome"></parameter>
 		<classes>
-			<class name="com.cil.ui.CILTestSuite"/>
+			<class name="com.bank.test.BankTestSuite"/>
 			</classes>
 	</test>
-	
-	<!-- <test name="CIL Test Cases2">
-		<parameter name="browser" value="Firefox"></parameter>
-		<classes>
-			<class name="com.cil.ui.CILTestSuite2"/>
-		</classes>
-	</test> -->
+
 </suite>

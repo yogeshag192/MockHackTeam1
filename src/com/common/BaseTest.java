@@ -36,64 +36,61 @@ import org.testng.annotations.Test;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
-import com.way2AutomationComponents.DragAndDropControls;
 
-public class BaseTest{
+public class BaseTest {
 
 	protected static WebDriver driver;
 	protected Properties webElementProperties;
 	protected Properties appProperties;
 	protected Properties configProperties;
-	
+
 	public static ExtentReports extent;
 	public static ExtentTest test;
-	
+
 	@BeforeSuite
-	public void beforeSuiteExtentSetup(){
+	public void beforeSuiteExtentSetup() {
 		System.out.println("Setting up extent report config..");
-		extent = new ExtentReports(System.getProperty("user.dir")+ "/extent-output/ExtentExecutionReport.html",true);
-		extent.addSystemInfo("HostName", "Yogesh")
-		.addSystemInfo("Environment", "QA")
-		.addSystemInfo("User Name", " Yogesh Agrawal");
-		extent.loadConfig(new File(System.getProperty("user.dir")+ "/extent-config.xml"));
+		extent = new ExtentReports(System.getProperty("user.dir") + "/extent-output/ExtentExecutionReport.html", true);
+		extent.addSystemInfo("HostName", "Yogesh").addSystemInfo("Environment", "QA").addSystemInfo("User Name",
+				" Yogesh Agrawal");
+		extent.loadConfig(new File(System.getProperty("user.dir") + "/extent-config.xml"));
 	}
-	
+
 	@BeforeMethod
-	public void beforeMethodExtentSetup(Method method){
+	public void beforeMethodExtentSetup(Method method) {
 		System.out.println("Setting up method config..");
-		test = extent.startTest(("Class: " +this.getClass().getSimpleName() + " :: " +method.getName()), method.getName());
+		test = extent.startTest(("Class: " + this.getClass().getSimpleName() + " :: " + method.getName()),
+				method.getName());
 		test.assignAuthor("Author : Yogesh").assignCategory("Smoke Tests");
-		
-		//for JOptionPane Display Popup
+
+		// for JOptionPane Display Popup
 		JOptionDialogue(method);
-		
+
 	}
-	
+
 	@AfterMethod
-	public void getResult(ITestResult result) throws IOException
-	    {
-	        if(result.getStatus() == ITestResult.FAILURE)
-	        {
-	            String screenShotPath = GetScreenShot.capture(driver, "Screenshot-"+System.currentTimeMillis());
-	            test.log(LogStatus.FAIL, result.getThrowable());
-	            test.log(LogStatus.FAIL, "Snapshot of failed test below: " + test.addScreenCapture(screenShotPath));
-	        }
-	        extent.endTest(test);
-	    }
-	
-	@AfterSuite
-	public void endReport(){
-		extent.flush();
-		
-		//extent.close();
-		
+	public void getResult(ITestResult result) throws IOException {
+		if (result.getStatus() == ITestResult.FAILURE) {
+			String screenShotPath = GetScreenShot.capture(driver, "Screenshot-" + System.currentTimeMillis());
+			test.log(LogStatus.FAIL, result.getThrowable());
+			test.log(LogStatus.FAIL, "Snapshot of failed test below: " + test.addScreenCapture(screenShotPath));
+		}
+		extent.endTest(test);
 	}
-	
-		// Runs before every test class
+
+	@AfterSuite
+	public void endReport() {
+		extent.flush();
+
+		// extent.close();
+
+	}
+
+	// Runs before every test class
 
 	@BeforeClass(alwaysRun = true)
 	@Parameters({ "browser" })
-	public void setUp(String browser) throws InterruptedException, IOException{
+	public void setUp(String browser) throws InterruptedException, IOException {
 		try {
 			LoadProperties();
 			System.out.println("Loaded Properties files..");
@@ -102,87 +99,79 @@ public class BaseTest{
 		} catch (IOException e) {
 			System.out.println("Properties file could not be opened..");
 		}
-		
-		configProperties = PropertiesUtil.readInputArguments();
-		System.out.println("Loaded config arguments..");
-		String portal = configProperties.getProperty("portal");
-		System.out.println("portal selected is : " +portal);
-		
+
 		setupSeleniumWebDriver(browser);
-		
-		LoginToApp login = new LoginToApp(driver);
-		login.loginToApplication(portal);
-		
+
+		/*
+		 * configProperties = PropertiesUtil.readInputArguments();
+		 * System.out.println("Loaded config arguments.."); String portal =
+		 * configProperties.getProperty("portal");
+		 * System.out.println("portal selected is : " +portal); LoginToApp login
+		 * = new LoginToApp(driver); login.loginToApplication(portal);
+		 */
+
 	}
-		
+
 	public WebDriver setupSeleniumWebDriver(String browser) {
-			try {
-				if (browser.equals("Firefox")) {
-					System.out.println("Setting up FireFox Driver.");
-					
-					String geckoDriverPath = System.getProperty("user.dir") +"\\Files\\geckodriver.exe";
-					System.out.println(geckoDriverPath);
-					System.setProperty("webdriver.gecko.driver", geckoDriverPath); 
-					driver = new FirefoxDriver();
+		try {
+			if (browser.equals("Firefox")) {
+				System.out.println("Setting up FireFox Driver.");
 
-					/*FirefoxProfile profile = new FirefoxProfile();
-					profile.setPreference("browser.download.folderList", 2);
-					profile.setPreference("browser.download.dir", Constants.DOWNLOAD_DIRECTORY);
-					profile.setPreference("browser.download.useDownloadDir", true);
-					profile.setPreference("browser.helperApps.alwaysAsk.force", false);
-		
-					DesiredCapabilities caps=DesiredCapabilities.firefox();
-					caps.setCapability(FirefoxDriver.PROFILE, profile);
-					driver =  new FirefoxDriver(caps);*/
-					
-				} else if (browser.equals("IE")) {
-					System.out.println("Setting up Internet Explorer Driver.");
-					System.setProperty("webdriver.ie.driver", Constants.IE_DRIVER_PATH);
-					driver = new InternetExplorerDriver();
-					
-				} else if (browser.equals("Chrome")) {
-					System.out.println("Setting up Chrome Driver.");
-					System.setProperty("webdriver.chrome.driver", Constants.CHROME_DRIVER_PATH);
-					driver = new ChromeDriver();
-					driver.manage().window().maximize();
-				} 
-				driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+				String geckoDriverPath = System.getProperty("user.dir") + "\\Files\\geckodriver.exe";
+				System.out.println(geckoDriverPath);
+				System.setProperty("webdriver.gecko.driver", geckoDriverPath);
+				driver = new FirefoxDriver();
 
-			} catch (WebDriverException e) {
-				System.out.println("could not setup " + browser + " driver : " + e.getMessage());
-				e.printStackTrace();
-			} catch (Exception e) {
-				System.out.println("Exception occured during driver setup : " + e.getMessage());
+			} else if (browser.equals("IE")) {
+				System.out.println("Setting up Internet Explorer Driver.");
+				System.setProperty("webdriver.ie.driver", Constants.IE_DRIVER_PATH);
+				driver = new InternetExplorerDriver();
+
+			} else if (browser.equals("Chrome")) {
+				System.out.println("Setting up Chrome Driver.");
+				System.setProperty("webdriver.chrome.driver", Constants.CHROME_DRIVER_PATH);
+				driver = new ChromeDriver();
+				driver.manage().window().maximize();
 			}
-			return driver;
+			driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+
+		} catch (WebDriverException e) {
+			System.out.println("could not setup " + browser + " driver : " + e.getMessage());
+			e.printStackTrace();
+		} catch (Exception e) {
+			System.out.println("Exception occured during driver setup : " + e.getMessage());
 		}
+		return driver;
+	}
 
 	@AfterClass
-	public void tearDown(){
+	public void tearDown() {
 		driver.close();
 	}
-	
+
 	private void LoadProperties() throws IOException {
 		appProperties = PropertiesUtil.getAppProperties();
 		webElementProperties = PropertiesUtil.getWebElementProperties();
 	}
-	
+
 	public String getElementValue(String propertyName) throws IOException {
 		return webElementProperties.getProperty(propertyName);
 	}
-	
+
 	public String getInputValue(String propertyName) throws IOException {
 		return appProperties.getProperty(propertyName);
-		
+
 	}
-	
-	public void JOptionDialogue(Method method){
-		
+
+	public void JOptionDialogue(Method method) {
+
 		String className = this.getClass().getSimpleName();
 		String methodName = method.getName();
-		String currentRunningTest = "Executing Test:"+ "\n\n" +"Class Name: "+className +"\n" +"Method Name: "+methodName;
-		
-		final JOptionPane optionPane = new JOptionPane(currentRunningTest, JOptionPane.INFORMATION_MESSAGE, JOptionPane.DEFAULT_OPTION, null, new Object[]{}, null);
+		String currentRunningTest = "Executing Test:" + "\n\n" + "Class Name: " + className + "\n" + "Method Name: "
+				+ methodName;
+
+		final JOptionPane optionPane = new JOptionPane(currentRunningTest, JOptionPane.INFORMATION_MESSAGE,
+				JOptionPane.DEFAULT_OPTION, null, new Object[] {}, null);
 
 		final JDialog dialog = new JDialog();
 		dialog.setTitle("Information");
@@ -193,19 +182,20 @@ public class BaseTest{
 		dialog.setDefaultCloseOperation(JDialog.DO_NOTHING_ON_CLOSE);
 		dialog.pack();
 
-		//create timer to dispose of dialog after 5 seconds
+		// create timer to dispose of dialog after 5 seconds
 		Timer timer = new Timer(5000, new AbstractAction() {
-			 @Override
-			    public void actionPerformed(ActionEvent ae) {
-			        dialog.dispose();
-			    }
+			@Override
+			public void actionPerformed(ActionEvent ae) {
+				dialog.dispose();
+			}
 		});
-		timer.setRepeats(false);//the timer should only go off once
+		timer.setRepeats(false);// the timer should only go off once
 
-		//start timer to close JDialog as dialog modal we must start the timer before its visible
+		// start timer to close JDialog as dialog modal we must start the timer
+		// before its visible
 		timer.start();
 
 		dialog.setVisible(true);
 	}
-	
-	}
+
+}
