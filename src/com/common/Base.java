@@ -145,6 +145,8 @@ public class Base {
 		}
 
 	}
+	
+
 
 	public boolean isElementPresentAndDisplayed(WebElement ele) {
 		if (ele.isDisplayed() && ele.isEnabled()) {

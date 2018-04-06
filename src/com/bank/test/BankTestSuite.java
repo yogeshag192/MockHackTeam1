@@ -14,7 +14,7 @@ public class BankTestSuite extends BaseTest {
 	
 	
 	@Test
-	public void VerifyGuestUserLogin() throws InterruptedException
+	public void VerifyGuestUserLogin() throws InterruptedException, IOException
 	{
 		System.out.println("\n-------------------- IN BANK - APPLICATION TESTCASES ----------------------------");
 		BankTestMethods bilM = new BankTestMethods(driver);
@@ -25,7 +25,7 @@ public class BankTestSuite extends BaseTest {
 	}
 	
 	//@Test
-	public void VerifyCustomerUserLogin() throws InterruptedException
+	public void VerifyCustomerUserLogin() throws InterruptedException, IOException
 	{
 		System.out.println("\n-------------------- IN BANK - APPLICATION TESTCASES ----------------------------");
 		BankTestMethods bilM = new BankTestMethods(driver);
@@ -48,18 +48,59 @@ public class BankTestSuite extends BaseTest {
 	
 	
 	//@Test
-	public void test7(){
+	public void ApplyLoan() throws InterruptedException, IOException{
 	
-		BankTestMethods cilM = new BankTestMethods(driver);
-		System.out.println("Started execution of :: test7");
-		//cilM.VerifyTest7();
-		System.out.println("Completed execution of :: test7");
+		BankTestMethods bilM = new BankTestMethods(driver);
+		System.out.println("Started execution of :: InputAmount");
+		bilM.ApplyLoan();
+		System.out.println("Completed execution of :: InputAmount");
 		System.out.println("-----------------------------------------------------------------\n");
 	
 		
 	}
 	
+	public void VerifyComponentsOnApplyLoanpage() throws InterruptedException, IOException{
 		
+		BankTestMethods bilM = new BankTestMethods(driver);
+		System.out.println("Started execution of :: InputAmount");
+		bilM.VerifyComponentsOnApplyLoanpage();
+		System.out.println("Completed execution of :: InputAmount");
+		System.out.println("-----------------------------------------------------------------\n");
 	
+		
+	}
+	
+public void BankAuthorityPage() throws InterruptedException, IOException{
+		
+		BankTestMethods bilM = new BankTestMethods(driver);
+		System.out.println("Started execution of :: InputAmount");
+		bilM.BankAuthorityPage();
+		System.out.println("Completed execution of :: InputAmount");
+		System.out.println("-----------------------------------------------------------------\n");
+	
+		
+	}
+		
+public void VerifyComponentsOnBankPage() throws InterruptedException, IOException{
+	
+	BankTestMethods bilM = new BankTestMethods(driver);
+	System.out.println("Started execution of :: InputAmount");
+	bilM.VerifyComponentsOnBankPage();
+	System.out.println("Completed execution of :: InputAmount");
+	System.out.println("-----------------------------------------------------------------\n");
+
+	
+}
+
+public void verifycalculateEMI() throws InterruptedException, IOException{
+	
+	BankTestMethods bilM = new BankTestMethods(driver);
+	System.out.println("Started execution of :: InputAmount");
+	bilM.verifycalculateEMI();
+	System.out.println("Completed execution of :: InputAmount");
+	System.out.println("-----------------------------------------------------------------\n");
+
+	
+}
 	
 }
