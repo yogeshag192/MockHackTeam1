@@ -123,9 +123,9 @@ public class Base {
 
 	public void type(String locator, String text) throws InterruptedException {
 		By by = parseLocator(locator);
-
 		WebElement ele = driver.findElement(by);
 		ele.click();
+		System.out.println("Clicked into Textbox "+locator);
 		Thread.sleep(1000);
 		ele.sendKeys(text);
 	}
@@ -171,6 +171,7 @@ public class Base {
 		WebDriverWait wait = new WebDriverWait(driver, 120);
 		element = wait.until(ExpectedConditions.elementToBeClickable(by));
 		element.click();
+	
 
 	}
 

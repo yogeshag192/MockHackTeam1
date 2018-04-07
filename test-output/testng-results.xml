@@ -1,17 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" ignored="2" total="6" passed="4">
   <reporter-output>
   </reporter-output>
-  <suite name="Test Suite: Bank Loan Automation Test Suite" duration-ms="20657" started-at="2018-04-06T11:00:17Z" finished-at="2018-04-06T11:00:38Z">
+  <suite name="Test Suite: Bank Loan Automation Test Suite" duration-ms="128109" started-at="2018-04-07T12:45:02Z" finished-at="2018-04-07T12:47:10Z">
     <groups>
     </groups>
-    <test name="Bank Loan Tests" duration-ms="20657" started-at="2018-04-06T11:00:17Z" finished-at="2018-04-06T11:00:38Z">
-      <class name="com.bank.test.BankTestSuite">
-        <test-method status="PASS" signature="beforeSuiteExtentSetup()[pri:0, instance:com.bank.test.BankTestSuite@239963d8]" name="beforeSuiteExtentSetup" is-config="true" duration-ms="134" started-at="2018-04-06T11:00:17Z" finished-at="2018-04-06T11:00:17Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeSuiteExtentSetup -->
-        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.bank.test.BankTestSuite@239963d8]" name="setUp" is-config="true" duration-ms="4370" started-at="2018-04-06T11:00:17Z" finished-at="2018-04-06T11:00:22Z">
+    <test name="Bank Loan Tests" duration-ms="128109" started-at="2018-04-07T12:45:02Z" finished-at="2018-04-07T12:47:10Z">
+      <class name="com.bank.test.BankTestSuite2">
+        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.bank.test.BankTestSuite2@598067a5]" name="setUp" is-config="true" duration-ms="3466" started-at="2018-04-07T12:46:28Z" finished-at="2018-04-07T12:46:31Z">
           <params>
             <param index="0">
               <value>
@@ -22,37 +18,136 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="beforeMethodExtentSetup(java.lang.reflect.Method)[pri:0, instance:com.bank.test.BankTestSuite@239963d8]" name="beforeMethodExtentSetup" is-config="true" duration-ms="5261" started-at="2018-04-06T11:00:22Z" finished-at="2018-04-06T11:00:27Z">
+        <test-method status="PASS" signature="beforeMethodExtentSetup(java.lang.reflect.Method)[pri:0, instance:com.bank.test.BankTestSuite2@598067a5]" name="beforeMethodExtentSetup" is-config="true" duration-ms="5041" started-at="2018-04-07T12:46:31Z" finished-at="2018-04-07T12:46:36Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[public void com.bank.test.BankTestSuite.VerifyGuestUserLogin() throws java.lang.InterruptedException]]>
+                <![CDATA[public void com.bank.test.BankTestSuite2.zverifyBankAuthorityPage() throws java.lang.InterruptedException,java.io.IOException]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethodExtentSetup -->
-        <test-method status="PASS" signature="VerifyGuestUserLogin()[pri:0, instance:com.bank.test.BankTestSuite@239963d8]" name="VerifyGuestUserLogin" duration-ms="8909" started-at="2018-04-06T11:00:27Z" finished-at="2018-04-06T11:00:36Z">
+        <test-method status="PASS" signature="zverifyBankAuthorityPage()[pri:0, instance:com.bank.test.BankTestSuite2@598067a5]" name="zverifyBankAuthorityPage" duration-ms="31042" started-at="2018-04-07T12:46:36Z" finished-at="2018-04-07T12:47:08Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- VerifyGuestUserLogin -->
-        <test-method status="PASS" signature="getResult(org.testng.ITestResult)[pri:0, instance:com.bank.test.BankTestSuite@239963d8]" name="getResult" is-config="true" duration-ms="6" started-at="2018-04-06T11:00:36Z" finished-at="2018-04-06T11:00:36Z">
+        </test-method> <!-- zverifyBankAuthorityPage -->
+        <test-method status="PASS" signature="getResult(org.testng.ITestResult)[pri:0, instance:com.bank.test.BankTestSuite2@598067a5]" name="getResult" is-config="true" duration-ms="1" started-at="2018-04-07T12:47:08Z" finished-at="2018-04-07T12:47:08Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=VerifyGuestUserLogin status=SUCCESS method=BankTestSuite.VerifyGuestUserLogin()[pri:0, instance:com.bank.test.BankTestSuite@239963d8] output={null}]]]>
+                <![CDATA[[TestResult name=zverifyBankAuthorityPage status=SUCCESS method=BankTestSuite2.zverifyBankAuthorityPage()[pri:0, instance:com.bank.test.BankTestSuite2@598067a5] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getResult -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.bank.test.BankTestSuite@239963d8]" name="tearDown" is-config="true" duration-ms="2085" started-at="2018-04-06T11:00:36Z" finished-at="2018-04-06T11:00:38Z">
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.bank.test.BankTestSuite2@598067a5]" name="tearDown" is-config="true" duration-ms="2326" started-at="2018-04-07T12:47:08Z" finished-at="2018-04-07T12:47:10Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="endReport()[pri:0, instance:com.bank.test.BankTestSuite@239963d8]" name="endReport" is-config="true" duration-ms="290" started-at="2018-04-06T11:00:38Z" finished-at="2018-04-06T11:00:38Z">
+      </class> <!-- com.bank.test.BankTestSuite2 -->
+      <class name="com.bank.test.BankTestSuite">
+        <test-method status="PASS" signature="beforeSuiteExtentSetup()[pri:0, instance:com.bank.test.BankTestSuite@3abbfa04]" name="beforeSuiteExtentSetup" is-config="true" duration-ms="146" started-at="2018-04-07T12:45:02Z" finished-at="2018-04-07T12:45:02Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeSuiteExtentSetup -->
+        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.bank.test.BankTestSuite@3abbfa04]" name="setUp" is-config="true" duration-ms="4344" started-at="2018-04-07T12:45:02Z" finished-at="2018-04-07T12:45:06Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="beforeMethodExtentSetup(java.lang.reflect.Method)[pri:0, instance:com.bank.test.BankTestSuite@3abbfa04]" name="beforeMethodExtentSetup" is-config="true" duration-ms="5285" started-at="2018-04-07T12:45:06Z" finished-at="2018-04-07T12:45:11Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.bank.test.BankTestSuite.verifycalculateEMI() throws java.lang.InterruptedException,java.io.IOException]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethodExtentSetup -->
+        <test-method status="PASS" signature="verifycalculateEMI()[pri:0, instance:com.bank.test.BankTestSuite@3abbfa04]" name="verifycalculateEMI" duration-ms="26068" started-at="2018-04-07T12:45:11Z" finished-at="2018-04-07T12:45:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifycalculateEMI -->
+        <test-method status="PASS" signature="getResult(org.testng.ITestResult)[pri:0, instance:com.bank.test.BankTestSuite@3abbfa04]" name="getResult" is-config="true" duration-ms="3" started-at="2018-04-07T12:45:37Z" finished-at="2018-04-07T12:45:37Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifycalculateEMI status=SUCCESS method=BankTestSuite.verifycalculateEMI()[pri:0, instance:com.bank.test.BankTestSuite@3abbfa04] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getResult -->
+        <test-method status="PASS" signature="beforeMethodExtentSetup(java.lang.reflect.Method)[pri:0, instance:com.bank.test.BankTestSuite@3abbfa04]" name="beforeMethodExtentSetup" is-config="true" duration-ms="5053" started-at="2018-04-07T12:45:37Z" finished-at="2018-04-07T12:45:43Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.bank.test.BankTestSuite.VerifyCustomerUserLogin() throws java.lang.InterruptedException,java.io.IOException]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethodExtentSetup -->
+        <test-method status="PASS" signature="VerifyCustomerUserLogin()[pri:0, instance:com.bank.test.BankTestSuite@3abbfa04]" name="VerifyCustomerUserLogin" duration-ms="14246" started-at="2018-04-07T12:45:43Z" depends-on-methods="com.bank.test.BankTestSuite.verifycalculateEMI" finished-at="2018-04-07T12:45:57Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifyCustomerUserLogin -->
+        <test-method status="PASS" signature="getResult(org.testng.ITestResult)[pri:0, instance:com.bank.test.BankTestSuite@3abbfa04]" name="getResult" is-config="true" duration-ms="1" started-at="2018-04-07T12:45:57Z" finished-at="2018-04-07T12:45:57Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=VerifyCustomerUserLogin status=SUCCESS method=BankTestSuite.VerifyCustomerUserLogin()[pri:0, instance:com.bank.test.BankTestSuite@3abbfa04] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getResult -->
+        <test-method status="PASS" signature="beforeMethodExtentSetup(java.lang.reflect.Method)[pri:0, instance:com.bank.test.BankTestSuite@3abbfa04]" name="beforeMethodExtentSetup" is-config="true" duration-ms="5045" started-at="2018-04-07T12:45:57Z" finished-at="2018-04-07T12:46:02Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.bank.test.BankTestSuite.verifyApplyLoan() throws java.lang.InterruptedException,java.io.IOException]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethodExtentSetup -->
+        <test-method status="PASS" signature="verifyApplyLoan()[pri:0, instance:com.bank.test.BankTestSuite@3abbfa04]" name="verifyApplyLoan" duration-ms="26053" started-at="2018-04-07T12:46:02Z" depends-on-methods="com.bank.test.BankTestSuite.VerifyCustomerUserLogin" finished-at="2018-04-07T12:46:28Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyApplyLoan -->
+        <test-method status="PASS" signature="getResult(org.testng.ITestResult)[pri:0, instance:com.bank.test.BankTestSuite@3abbfa04]" name="getResult" is-config="true" duration-ms="1" started-at="2018-04-07T12:46:28Z" finished-at="2018-04-07T12:46:28Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyApplyLoan status=SUCCESS method=BankTestSuite.verifyApplyLoan()[pri:0, instance:com.bank.test.BankTestSuite@3abbfa04] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getResult -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.bank.test.BankTestSuite@3abbfa04]" name="tearDown" is-config="true" duration-ms="91" started-at="2018-04-07T12:46:28Z" finished-at="2018-04-07T12:46:28Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="endReport()[pri:0, instance:com.bank.test.BankTestSuite@3abbfa04]" name="endReport" is-config="true" duration-ms="278" started-at="2018-04-07T12:47:10Z" finished-at="2018-04-07T12:47:10Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- endReport -->

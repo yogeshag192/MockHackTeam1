@@ -2,19 +2,19 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Test Suite: Bank Loan Automation Test Suite]">
   <test thread-count="5" name="Bank Loan Tests(failed)">
-    <parameter name="browser" value="IE"/>
+    <parameter name="browser" value="Chrome"/>
     <classes>
-      <class name="com.bank.test.BankTestSuite">
+      <class name="com.bank.test.BankTestSuite2">
         <methods>
           <include name="setUp"/>
           <include name="endReport"/>
           <include name="tearDown"/>
-          <include name="VerifyGuestUserLogin"/>
+          <include name="zverifyBankAuthorityPage"/>
           <include name="beforeSuiteExtentSetup"/>
           <include name="beforeMethodExtentSetup"/>
           <include name="getResult"/>
         </methods>
-      </class> <!-- com.bank.test.BankTestSuite -->
+      </class> <!-- com.bank.test.BankTestSuite2 -->
     </classes>
   </test> <!-- Bank Loan Tests(failed) -->
 </suite> <!-- Failed suite [Test Suite: Bank Loan Automation Test Suite] -->
